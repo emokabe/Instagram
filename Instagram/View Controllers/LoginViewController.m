@@ -7,6 +7,7 @@
 
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "HomeFeedViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -30,7 +31,16 @@
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged in successfully");
-            [self performSegueWithIdentifier:@"segueOnLoginSuccess" sender:nil];
+            //[self performSegueWithIdentifier:@"segueOnLoginSuccess" sender:nil];
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil]; //
+            HomeFeedViewController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"]; //
+            self.view.window.rootViewController = feedVC;
+            
+            // no segueways, just swapping root view controllers
+            
+            
+            //[self performSegueWithIdentifier:@"segueOnLoginSuccess" sender:nil];
             // display view controller that needs to shown after successful login
         }
     }];

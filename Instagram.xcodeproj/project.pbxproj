@@ -11,9 +11,9 @@
 		99014E73DB8FF5839CD9051C /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C436C15462B6BCABAC2F775B /* Pods_Instagram.framework */; };
 		9B01DECBCFF1E428FDC7046A /* Pods_Instagram_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53ED645E2505D65CF7F3CA1 /* Pods_Instagram_InstagramUITests.framework */; };
 		BEA859CA286A6A3D008989B0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA859C9286A6A3D008989B0 /* LoginViewController.m */; };
+		BEA859CD286ABAF0008989B0 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA859CC286ABAF0008989B0 /* HomeFeedViewController.m */; };
 		BEDDB46B286A4E890036AD97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDDB46A286A4E890036AD97 /* AppDelegate.m */; };
 		BEDDB46E286A4E890036AD97 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDDB46D286A4E890036AD97 /* SceneDelegate.m */; };
-		BEDDB471286A4E890036AD97 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDDB470286A4E890036AD97 /* ViewController.m */; };
 		BEDDB474286A4E890036AD97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDDB472286A4E890036AD97 /* Main.storyboard */; };
 		BEDDB476286A4E890036AD97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEDDB475286A4E890036AD97 /* Assets.xcassets */; };
 		BEDDB479286A4E890036AD97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDDB477286A4E890036AD97 /* LaunchScreen.storyboard */; };
@@ -50,13 +50,13 @@
 		B53ED645E2505D65CF7F3CA1 /* Pods_Instagram_InstagramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram_InstagramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA859C8286A6A3D008989B0 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BEA859C9286A6A3D008989B0 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BEA859CB286ABAF0008989B0 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
+		BEA859CC286ABAF0008989B0 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
 		BEDDB466286A4E890036AD97 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEDDB469286A4E890036AD97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BEDDB46A286A4E890036AD97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BEDDB46C286A4E890036AD97 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BEDDB46D286A4E890036AD97 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BEDDB46F286A4E890036AD97 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BEDDB470286A4E890036AD97 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BEDDB473286A4E890036AD97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEDDB475286A4E890036AD97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEDDB478286A4E890036AD97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,6 +127,8 @@
 			children = (
 				BEA859C8286A6A3D008989B0 /* LoginViewController.h */,
 				BEA859C9286A6A3D008989B0 /* LoginViewController.m */,
+				BEA859CB286ABAF0008989B0 /* HomeFeedViewController.h */,
+				BEA859CC286ABAF0008989B0 /* HomeFeedViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -160,8 +162,6 @@
 				BEDDB46A286A4E890036AD97 /* AppDelegate.m */,
 				BEDDB46C286A4E890036AD97 /* SceneDelegate.h */,
 				BEDDB46D286A4E890036AD97 /* SceneDelegate.m */,
-				BEDDB46F286A4E890036AD97 /* ViewController.h */,
-				BEDDB470286A4E890036AD97 /* ViewController.m */,
 				BEDDB472286A4E890036AD97 /* Main.storyboard */,
 				BEDDB475286A4E890036AD97 /* Assets.xcassets */,
 				BEDDB477286A4E890036AD97 /* LaunchScreen.storyboard */,
@@ -427,7 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEDDB471286A4E890036AD97 /* ViewController.m in Sources */,
+				BEA859CD286ABAF0008989B0 /* HomeFeedViewController.m in Sources */,
 				BEDDB46B286A4E890036AD97 /* AppDelegate.m in Sources */,
 				BEDDB47C286A4E890036AD97 /* main.m in Sources */,
 				BEDDB46E286A4E890036AD97 /* SceneDelegate.m in Sources */,
