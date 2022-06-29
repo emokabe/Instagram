@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "ComposeViewController.h"
+#import "Post.h"
 
 @interface HomeFeedViewController () // <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
@@ -65,14 +67,38 @@
     NSLog(@"%@", PFUser.currentUser.username);
 }
 
+/*
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+
+    // Do something with the images (based on your use case)
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+ */
 
 /*
+
 #pragma mark - Navigation
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UINavigationController *navigationController = [segue destinationViewController];
+    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+    composeController.delegate = self;
+}
+
+
+- (void)didPost:(nonnull Post *)post {
+    //[self.arrayOfTweets insertObject:tweet atIndex:0];
+    //[self.tableView reloadData];
 }
 */
 

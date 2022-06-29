@@ -21,6 +21,9 @@
 		BEDDB486286A4E890036AD97 /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDDB485286A4E890036AD97 /* InstagramTests.m */; };
 		BEDDB490286A4E890036AD97 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDDB48F286A4E890036AD97 /* InstagramUITests.m */; };
 		BEDDB492286A4E890036AD97 /* InstagramUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDDB491286A4E890036AD97 /* InstagramUITestsLaunchTests.m */; };
+		BEECC741286BA160009CCFFB /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = BEECC740286BA160009CCFFB /* Post.m */; };
+		BEECC74A286BC8AC009CCFFB /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEECC749286BC8AC009CCFFB /* ComposeViewController.m */; };
+		BEECC751286C1657009CCFFB /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEECC750286C1657009CCFFB /* PostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,12 @@
 		BEDDB48B286A4E890036AD97 /* InstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEDDB48F286A4E890036AD97 /* InstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITests.m; sourceTree = "<group>"; };
 		BEDDB491286A4E890036AD97 /* InstagramUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITestsLaunchTests.m; sourceTree = "<group>"; };
+		BEECC73F286BA160009CCFFB /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		BEECC740286BA160009CCFFB /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		BEECC748286BC8AC009CCFFB /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		BEECC749286BC8AC009CCFFB /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		BEECC74F286C1657009CCFFB /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		BEECC750286C1657009CCFFB /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		C436C15462B6BCABAC2F775B /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D196649E67F9A168B9F180 /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +138,8 @@
 				BEA859C9286A6A3D008989B0 /* LoginViewController.m */,
 				BEA859CB286ABAF0008989B0 /* HomeFeedViewController.h */,
 				BEA859CC286ABAF0008989B0 /* HomeFeedViewController.m */,
+				BEECC748286BC8AC009CCFFB /* ComposeViewController.h */,
+				BEECC749286BC8AC009CCFFB /* ComposeViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -167,6 +178,8 @@
 				BEDDB477286A4E890036AD97 /* LaunchScreen.storyboard */,
 				BEDDB47A286A4E890036AD97 /* Info.plist */,
 				BEDDB47B286A4E890036AD97 /* main.m */,
+				BEECC74B286C1607009CCFFB /* Views */,
+				BEECC73B286BA0C7009CCFFB /* Models */,
 				BEA859C7286A69F1008989B0 /* View Controllers */,
 			);
 			path = Instagram;
@@ -187,6 +200,24 @@
 				BEDDB491286A4E890036AD97 /* InstagramUITestsLaunchTests.m */,
 			);
 			path = InstagramUITests;
+			sourceTree = "<group>";
+		};
+		BEECC73B286BA0C7009CCFFB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEECC73F286BA160009CCFFB /* Post.h */,
+				BEECC740286BA160009CCFFB /* Post.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BEECC74B286C1607009CCFFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEECC74F286C1657009CCFFB /* PostCell.h */,
+				BEECC750286C1657009CCFFB /* PostCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,8 +459,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA859CD286ABAF0008989B0 /* HomeFeedViewController.m in Sources */,
+				BEECC741286BA160009CCFFB /* Post.m in Sources */,
 				BEDDB46B286A4E890036AD97 /* AppDelegate.m in Sources */,
+				BEECC751286C1657009CCFFB /* PostCell.m in Sources */,
 				BEDDB47C286A4E890036AD97 /* main.m in Sources */,
+				BEECC74A286BC8AC009CCFFB /* ComposeViewController.m in Sources */,
 				BEDDB46E286A4E890036AD97 /* SceneDelegate.m in Sources */,
 				BEA859CA286A6A3D008989B0 /* LoginViewController.m in Sources */,
 			);
