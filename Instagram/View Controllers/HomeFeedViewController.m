@@ -15,6 +15,7 @@
 
 @interface HomeFeedViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -30,6 +31,11 @@
     //self.navigationController.navigationBarHidden = NO;
     
     [self getPosts];
+    
+    // Initialize a UIRefreshControl
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(getPosts) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     NSLog(@"%@", PFUser.currentUser.username);
 }
@@ -90,12 +96,14 @@
         if (posts) {
             // do something with the data fetched
             // display all cells here?
+            NSLog(@"%@", posts);
             self.arrayOfPosts = [NSMutableArray arrayWithArray:posts];
             [self.tableView reloadData];
         }
         else {
             NSLog(@"Error!");
         }
+        [self.refreshControl endRefreshing];
     }];
 }
 

@@ -23,7 +23,8 @@
 - (void)setPost:(Post *)post {
     _post = post;
     self.photoImageView.file = post[@"image"];
-    //self.
+    self.captionView.text = self.post.caption;
+    //post[@"caption"];
     [self.photoImageView loadInBackground];
 }
 

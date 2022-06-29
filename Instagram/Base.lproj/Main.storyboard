@@ -104,11 +104,11 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P17-Xv-kOS" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="-27.5" width="414" height="402"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="414" id="6pO-hW-y8Q"/>
-                                                        <constraint firstAttribute="height" constant="402" id="wRy-uE-HWf"/>
+                                                        <constraint firstAttribute="width" constant="414" id="7vV-kW-Ukg"/>
+                                                        <constraint firstAttribute="height" constant="402" id="cTy-UH-wqO"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DcN-m5-BUd">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Caption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DcN-m5-BUd">
                                                     <rect key="frame" x="0.0" y="383" width="414" height="121"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
@@ -117,16 +117,17 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="DcN-m5-BUd" firstAttribute="top" secondItem="P17-Xv-kOS" secondAttribute="bottom" constant="8.5" id="008-FR-Qbf"/>
-                                                <constraint firstItem="DcN-m5-BUd" firstAttribute="trailing" secondItem="P17-Xv-kOS" secondAttribute="trailing" id="ON0-Lv-4Jz"/>
-                                                <constraint firstItem="P17-Xv-kOS" firstAttribute="top" secondItem="YVN-yg-6wu" secondAttribute="top" constant="-27.5" id="Pbs-SJ-xzM"/>
-                                                <constraint firstItem="P17-Xv-kOS" firstAttribute="leading" secondItem="YVN-yg-6wu" secondAttribute="leading" id="hJh-yM-PLG"/>
-                                                <constraint firstItem="DcN-m5-BUd" firstAttribute="leading" secondItem="P17-Xv-kOS" secondAttribute="leading" id="l8I-as-0JT"/>
-                                                <constraint firstAttribute="bottom" secondItem="DcN-m5-BUd" secondAttribute="bottom" constant="19" id="lkN-6c-65W"/>
-                                                <constraint firstAttribute="trailing" secondItem="P17-Xv-kOS" secondAttribute="trailing" id="tN8-Ld-oQn"/>
+                                                <constraint firstItem="P17-Xv-kOS" firstAttribute="leading" secondItem="YVN-yg-6wu" secondAttribute="leading" id="9V5-Kg-YcP"/>
+                                                <constraint firstItem="DcN-m5-BUd" firstAttribute="trailing" secondItem="P17-Xv-kOS" secondAttribute="trailing" id="Mqc-hP-OlO"/>
+                                                <constraint firstAttribute="trailing" secondItem="P17-Xv-kOS" secondAttribute="trailing" id="eMV-nH-Ekz"/>
+                                                <constraint firstItem="DcN-m5-BUd" firstAttribute="top" secondItem="P17-Xv-kOS" secondAttribute="bottom" constant="8.5" id="fY2-hi-e2v"/>
+                                                <constraint firstItem="P17-Xv-kOS" firstAttribute="top" secondItem="YVN-yg-6wu" secondAttribute="top" constant="-27.5" id="gey-3K-WAr"/>
+                                                <constraint firstAttribute="bottom" secondItem="DcN-m5-BUd" secondAttribute="bottom" constant="19" id="liQ-jG-4Ca"/>
+                                                <constraint firstItem="DcN-m5-BUd" firstAttribute="leading" secondItem="P17-Xv-kOS" secondAttribute="leading" id="zvb-gO-s68"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="captionView" destination="DcN-m5-BUd" id="Qjc-NP-Dlv"/>
                                             <outlet property="photoImageView" destination="P17-Xv-kOS" id="iS6-xQ-1oS"/>
                                         </connections>
                                     </tableViewCell>
@@ -237,11 +238,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3jl-QL-Gts">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3jl-QL-Gts">
                                 <rect key="frame" x="163" y="82" width="231" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
