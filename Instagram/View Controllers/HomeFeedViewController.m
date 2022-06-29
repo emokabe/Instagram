@@ -11,9 +11,10 @@
 #import "Parse/Parse.h"
 #import "ComposeViewController.h"
 #import "Post.h"
+#import "PostCell.h"
 
-@interface HomeFeedViewController () // <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *feedTableView;
+@interface HomeFeedViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,22 +23,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //self.feedTableView.dataSource = self;
-    //self.feedTableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     //self.navigationController.navigationBarHidden = NO;
+    
+    [self getPosts];
     
     NSLog(@"%@", PFUser.currentUser.username);
 }
 
-/*
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection: (NSInteger) section {
-    
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+     
+     [cell setPost:self.arrayOfPosts[indexPath.row]];
+     
+     return cell;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayOfPosts.count;
 }
- */
 
 - (IBAction)didTapLogout:(id)sender {
     NSLog(@"%@", PFUser.currentUser.username);
@@ -67,21 +74,7 @@
     NSLog(@"%@", PFUser.currentUser.username);
 }
 
-/*
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
-    // Do something with the images (based on your use case)
-    
-    // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
- */
-
-/*
 
 #pragma mark - Navigation
 
@@ -95,11 +88,34 @@
     composeController.delegate = self;
 }
 
+-(void)getPosts {
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
 
-- (void)didPost:(nonnull Post *)post {
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            // do something with the data fetched
+            // display all cells here?
+            self.arrayOfPosts = [NSMutableArray arrayWithArray:posts];
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"Error!");
+        }
+    }];
+}
+
+
+- (void)didPost {
     //[self.arrayOfTweets insertObject:tweet atIndex:0];
     //[self.tableView reloadData];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    [self getPosts];
 }
-*/
+
 
 @end

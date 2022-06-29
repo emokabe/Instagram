@@ -9,7 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeFeedViewController : UIViewController // <UITableViewDataSource>
+@interface HomeFeedViewController : UIViewController <UITableViewDataSource>
+@property (nonatomic, strong) NSMutableArray *arrayOfPosts;
 
 - (IBAction)didTapLogout:(id)sender;
 

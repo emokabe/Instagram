@@ -95,7 +95,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="523" id="zIE-92-pvc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="523" id="zIE-92-pvc" customClass="PostCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="523"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zIE-92-pvc" id="YVN-yg-6wu">
@@ -117,6 +117,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="P17-Xv-kOS" id="iS6-xQ-1oS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -149,7 +152,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="feedTableView" destination="Es3-yW-Tef" id="2fO-Ur-UPF"/>
+                        <outlet property="tableView" destination="Es3-yW-Tef" id="k4n-aX-Pzn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mi8-Cv-Ded" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -189,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrh-aW-1uZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4771.0144927536239" y="839.73214285714278"/>
+            <point key="canvasLocation" x="4523" y="840"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lpl-tb-pps">
@@ -270,8 +273,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="postImage" destination="NcA-CQ-fQQ" id="w1o-iC-0OY"/>
                         <outlet property="postText" destination="3jl-QL-Gts" id="CdO-2Y-Hci"/>
+                        <outlet property="postView" destination="NcA-CQ-fQQ" id="17P-Ig-KhC"/>
                         <outlet property="selectImageButton" destination="A9u-D8-F4s" id="0sA-UF-Xsh"/>
                     </connections>
                 </viewController>
@@ -296,7 +299,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdT-Cb-vdH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3902.898550724638" y="839.73214285714278"/>
+            <point key="canvasLocation" x="3567" y="840"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="myN-o1-gKs">

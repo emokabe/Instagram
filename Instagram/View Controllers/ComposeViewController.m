@@ -8,10 +8,11 @@
 #import "ComposeViewController.h"
 #import "Parse/Parse.h"
 
+
 @interface ComposeViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *postText;
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
+@property (weak, nonatomic) IBOutlet UIImageView *postView;
 @property (weak, nonatomic) IBOutlet UIButton *selectImageButton;
 
 
@@ -53,8 +54,8 @@
     
     //[PFImageView loadInBackground];
     
-    self.postImage.image = originalImage;
-    //self.postImage.image = editedImage;
+    self.postView.image = originalImage;
+    // resize
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -75,7 +76,17 @@
 }
 
 - (IBAction)didPressShare:(id)sender {
-    
+    [Post postUserImage:self.postView.image withCaption:self.postText.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Share success!");
+            
+            [self.delegate didPost];
+        } else {
+            NSLog(@"Post share failed: %@", error.localizedDescription);
+            return;
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 
