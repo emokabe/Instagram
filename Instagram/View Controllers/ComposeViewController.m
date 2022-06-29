@@ -47,14 +47,18 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    //UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
     
     //[PFImageView loadInBackground];
     
-    self.postView.image = originalImage;
+    //self.postView.image = originalImage;
+    
+    CGSize imageSize = editedImage.size;
+    CGFloat multiplier = 0.9;
+    self.postView.image = [self resizeImage:editedImage withSize:CGSizeMake(imageSize.width * multiplier, imageSize.height * multiplier)];
     // resize
     
     // Dismiss UIImagePickerController to go back to your original view controller

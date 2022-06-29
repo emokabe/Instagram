@@ -48,13 +48,21 @@
 
 - (IBAction)didTapLogout:(id)sender {
     NSLog(@"%@", PFUser.currentUser.username);
-
+    
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         NSLog(@"%@", loginViewController);
         self.view.window.rootViewController = loginViewController; // substitute, less elegant
+       /*
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        NSLog(@"%@", loginViewController);
+        self.view.window.rootViewController = loginViewController; // substitute, less elegant
+        */
+        
         /*
          
         // Option 1: Swap window root view controller
@@ -65,6 +73,8 @@
         
          */
         // Option 2: Trace back to the view controller that was presented and ask to be dismissed
+        //[self.navigationController.tabBarController dismissViewControllerAnimated:YES completion:nil];
+        
         //[self.navigationController.tabBarController dismissViewControllerAnimated:YES completion:nil];
         
         // PFUser.current() will now be nil
