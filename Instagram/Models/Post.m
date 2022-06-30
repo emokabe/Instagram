@@ -14,6 +14,7 @@
 @dynamic author;
 @dynamic caption;
 //@dynamic createdAt;
+@dynamic uiimage;
 @dynamic image;
 @dynamic likeCount;
 //@dynamic commentCount;
@@ -25,6 +26,7 @@
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
+    newPost.uiimage = image;
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;

@@ -6,8 +6,14 @@
 //
 
 #import "PostDetailsViewController.h"
+#import "PFImageView.h"
 
 @interface PostDetailsViewController ()
+@property (weak, nonatomic) IBOutlet PFImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+
 
 @end
 
@@ -15,8 +21,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.imageView.image = self.postInfo.uiimage;
+    self.usernameLabel.text = self.postInfo.author.username;
+    self.captionLabel.text = self.postInfo.caption;
+    
+    NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"MM/dd/yyyy, HH:mm"];
+    NSString *dateStr = [dateformatter stringFromDate:self.postInfo.createdAt];
+    
+    self.timestampLabel.text = dateStr;
 }
+
+/*
+ @property (strong, nonatomic) NSString *postID;
+ @property (strong, nonatomic) NSString *userID;
+ @property (strong, nonatomic) PFUser *author;
+ @property (strong, nonatomic) NSString *caption;
+ //@property (strong, nonatomic) NSDate *createdAt;
+ @property (strong, nonatomic) NSNumber *likeCount;
+ //@property (strong, nonatomic) NSNumber *commentCount;
+ */
 
 /*
 #pragma mark - Navigation

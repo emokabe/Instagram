@@ -12,6 +12,7 @@
 #import "ComposeViewController.h"
 #import "Post.h"
 #import "PostCell.h"
+#import "PostDetailsViewController.h"
 
 @interface HomeFeedViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -82,19 +83,17 @@
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
     } else if([segue.identifier isEqualToString:@"detailsSegue"]) {
-        /*
         // 1 Get indexpath
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
         // 2 Get movie dictionary
-        Tweet *dataToPass = self.arrayOfTweets[indexPath.row]; // results -> movies
+        Post *dataToPass = self.arrayOfPosts[indexPath.row]; // results -> movies
         
         // 3 Get reference to destination controller
-        TweetDetailsViewController *detailsVC = [segue destinationViewController];
+        PostDetailsViewController *detailsVC = [segue destinationViewController];
         
         // 4 Pass the local dictionary to the view controller property
-        detailsVC.tweetInfo = dataToPass;
-         */
+        detailsVC.postInfo = dataToPass;
     }
 }
 
