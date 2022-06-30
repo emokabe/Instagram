@@ -9,7 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController <UITableViewDataSource>
+
+@property (nonatomic, strong) NSMutableArray *arrayOfPosts;
 
 @end
 
