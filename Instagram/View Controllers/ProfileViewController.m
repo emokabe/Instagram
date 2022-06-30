@@ -44,6 +44,7 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
+    [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
     NSUInteger limit = 10;
     __block NSUInteger skip = 0;
     postQuery.limit = limit;
@@ -55,6 +56,7 @@
             // do something with the data fetched
             // display all cells here?
             NSLog(@"%@", posts);
+            
             self.arrayOfPosts = [NSMutableArray arrayWithArray:posts];
             NSLog(@"%@", self.arrayOfPosts);
             

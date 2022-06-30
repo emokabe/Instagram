@@ -35,7 +35,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [X] Make the keyboard disappear whenever user taps on the screen (cannot login on phone without this function because buttons get covered by keyboard)
+- [X] Make the keyboard disappear whenever user taps on the screen (cannot login/signup on phone without this function because buttons get covered by keyboard)
+- [X] Implemented UI for like button (button changes when clicked, number of likes changes), but still working on backend
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 

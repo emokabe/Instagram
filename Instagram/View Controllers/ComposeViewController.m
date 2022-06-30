@@ -8,6 +8,7 @@
 #import "ComposeViewController.h"
 #import "Parse/Parse.h"
 #import "SVProgressHUD/SVProgressHUD.h"
+#import "ProgressHUD-Swift.h"
 
 
 @interface ComposeViewController ()
