@@ -8,6 +8,8 @@ target 'Instagram' do
   # Pods for Instagram
   pod 'Parse'
   pod 'Parse/UI'
+  pod 'ProgressHUD'
+  pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 
   target 'InstagramTests' do
     inherit! :search_paths

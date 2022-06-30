@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface ComposeViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-// TODO: Add tableview delgate and datasource later
 
 @property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;
 

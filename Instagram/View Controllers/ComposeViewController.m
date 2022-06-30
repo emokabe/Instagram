@@ -7,6 +7,7 @@
 
 #import "ComposeViewController.h"
 #import "Parse/Parse.h"
+#import "SVProgressHUD/SVProgressHUD.h"
 
 
 @interface ComposeViewController ()
@@ -83,7 +84,6 @@
     [Post postUserImage:self.postView.image withCaption:self.postText.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Share success!");
-            
             [self.delegate didPost];
         } else {
             NSLog(@"Post share failed: %@", error.localizedDescription);
@@ -91,6 +91,10 @@
         }
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
+}
+
+- (IBAction)onScreenTap:(id)sender {
+    [self.view endEditing:true];
 }
 
 

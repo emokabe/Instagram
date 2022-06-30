@@ -66,6 +66,10 @@
     }];
 }
 
+- (IBAction)onScreenTap:(id)sender {
+    [self.view endEditing:true];
+}
+
 
 /*
 #pragma mark - Navigation

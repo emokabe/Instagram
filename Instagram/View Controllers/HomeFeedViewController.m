@@ -77,11 +77,25 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
-    composeController.delegate = self;
+    if([segue.identifier isEqualToString:@"composeSegue"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+    } else if([segue.identifier isEqualToString:@"detailsSegue"]) {
+        /*
+        // 1 Get indexpath
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        // 2 Get movie dictionary
+        Tweet *dataToPass = self.arrayOfTweets[indexPath.row]; // results -> movies
+        
+        // 3 Get reference to destination controller
+        TweetDetailsViewController *detailsVC = [segue destinationViewController];
+        
+        // 4 Pass the local dictionary to the view controller property
+        detailsVC.tweetInfo = dataToPass;
+         */
+    }
 }
 
 -(void)getPosts {
