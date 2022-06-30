@@ -29,8 +29,6 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    //self.navigationController.navigationBarHidden = NO;
-    
     [self getPosts];
     
     // Initialize a UIRefreshControl
@@ -63,8 +61,6 @@
         LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         NSLog(@"%@", loginViewController);
         self.view.window.rootViewController = loginViewController; // substitute, less elegant
-        
-        //[self.navigationController.tabBarController dismissViewControllerAnimated:YES completion:nil];
     }];
     
     
@@ -107,8 +103,6 @@
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            // do something with the data fetched
-            // display all cells here?
             NSLog(@"%@", posts);
             self.arrayOfPosts = [NSMutableArray arrayWithArray:posts];
             [self.tableView reloadData];
@@ -122,8 +116,6 @@
 
 
 - (void)didPost {
-    //[self.arrayOfTweets insertObject:tweet atIndex:0];
-    //[self.tableView reloadData];
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     [self getPosts];
 }

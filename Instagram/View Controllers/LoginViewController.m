@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)loginUser:(id)sender {
@@ -31,17 +30,10 @@
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged in successfully");
-            //[self performSegueWithIdentifier:@"segueOnLoginSuccess" sender:nil];
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil]; //
             HomeFeedViewController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"]; //
             self.view.window.rootViewController = feedVC;
-            
-            // no segueways, just swapping root view controllers
-            
-            
-            //[self performSegueWithIdentifier:@"segueOnLoginSuccess" sender:nil];
-            // display view controller that needs to shown after successful login
         }
     }];
 }
@@ -69,16 +61,5 @@
 - (IBAction)onScreenTap:(id)sender {
     [self.view endEditing:true];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

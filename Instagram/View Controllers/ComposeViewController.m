@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)didTapCancel:(id)sender {
@@ -50,13 +49,6 @@
     
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-
-    // Do something with the images (based on your use case)
-    
-    //[PFImageView loadInBackground];
-    
-    //self.postView.image = originalImage;
     
     CGSize imageSize = originalImage.size;
     CGFloat multiplier = 0.9;
@@ -97,17 +89,5 @@
 - (IBAction)onScreenTap:(id)sender {
     [self.view endEditing:true];
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -16,8 +16,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)setPost:(Post *)post {
@@ -33,24 +31,17 @@
     
     self.timestampView.text = dateStr;
     
-    //post[@"caption"];
     [self.photoImageView loadInBackground];
 }
 
 - (IBAction)didTapLike:(id)sender {
     if (self.post.liked) {
-        // Put code to unfavorite this tweet here
         self.post.liked = NO;
-        
         self.post.likeCount = @([self.post.likeCount floatValue] - 1);
-        // handle backend
     } else {
         self.post.liked = YES;
         self.post.likeCount = @([self.post.likeCount floatValue] + 1);
         self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
-        //self.tweet.favoriteCount += 1;
-        // handle backend
-
     }
     
     // Update cell UI
@@ -59,8 +50,6 @@
 }
 
 -(void)refreshData {
-    //self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
-    
     if (self.post.liked) {
         [self.likeButton setImage:[UIImage imageNamed:@"instagram-red-heart-icon"] forState:UIControlStateNormal];
     } else {

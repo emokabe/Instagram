@@ -53,8 +53,6 @@
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            // do something with the data fetched
-            // display all cells here?
             NSLog(@"%@", posts);
             
             self.arrayOfPosts = [NSMutableArray arrayWithArray:posts];
@@ -73,16 +71,6 @@
         [self.refreshControl endRefreshing];
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ProfilePostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfilePostCell"];
