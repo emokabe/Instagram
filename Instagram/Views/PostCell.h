@@ -12,6 +12,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol PostCellViewControllerDelegate
+
+- (void)didEditPost;
+
+@end
+
 @interface PostCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *photoImageView;
@@ -24,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (strong, nonatomic) Post *post;
+
+@property (nonatomic, weak) id<PostCellViewControllerDelegate> delegate;
 
 @end
 

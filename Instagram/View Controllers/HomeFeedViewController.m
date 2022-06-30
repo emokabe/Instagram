@@ -14,7 +14,7 @@
 #import "PostCell.h"
 #import "PostDetailsViewController.h"
 
-@interface HomeFeedViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface HomeFeedViewController () <ComposeViewControllerDelegate, PostCellViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
@@ -125,6 +125,10 @@
     //[self.arrayOfTweets insertObject:tweet atIndex:0];
     //[self.tableView reloadData];
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    [self getPosts];
+}
+
+- (void)didEditPost {
     [self getPosts];
 }
 

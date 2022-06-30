@@ -47,6 +47,7 @@
     } else {
         self.post.liked = YES;
         self.post.likeCount = @([self.post.likeCount floatValue] + 1);
+        self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
         //self.tweet.favoriteCount += 1;
         // handle backend
 
@@ -54,10 +55,11 @@
     
     // Update cell UI
     [self refreshData];
+    [self.delegate didEditPost];
 }
 
 -(void)refreshData {
-    self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
+    //self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
     
     if (self.post.liked) {
         [self.likeButton setImage:[UIImage imageNamed:@"instagram-red-heart-icon"] forState:UIControlStateNormal];
