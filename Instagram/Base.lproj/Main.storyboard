@@ -195,7 +195,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionView" destination="ul8-NO-Wdl" id="LWP-Vy-Mo1"/>
+                                            <outlet property="likeCount" destination="4dC-va-dGz" id="OjN-it-A3z"/>
                                             <outlet property="photoImageView" destination="P17-Xv-kOS" id="iS6-xQ-1oS"/>
+                                            <outlet property="timestampView" destination="C3X-7G-Axy" id="tIs-PC-Gda"/>
+                                            <outlet property="usernameLabel" destination="MWG-Ws-MhF" id="WVd-Oe-yAZ"/>
                                             <segue destination="mck-IY-a5Q" kind="show" identifier="detailsSegue" id="vtm-Kg-22V"/>
                                         </connections>
                                     </tableViewCell>
