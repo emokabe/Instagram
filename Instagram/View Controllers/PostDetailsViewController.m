@@ -9,11 +9,11 @@
 #import "PFImageView.h"
 
 @interface PostDetailsViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
-
 
 @end
 
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.imageView.image = self.postInfo.uiimage;
+    self.imageView.file = self.postInfo.image;
     self.usernameLabel.text = self.postInfo.author.username;
     self.captionLabel.text = self.postInfo.caption;
     
