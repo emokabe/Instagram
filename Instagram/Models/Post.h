@@ -17,8 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *caption;
 //@property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSNumber *likeCount;
+@property (nonatomic) BOOL liked; // Configure like button
 //@property (strong, nonatomic) NSNumber *commentCount;
-@property (strong, nonatomic) UIImage *uiimage;
+//@property (strong, nonatomic) UIImage *uiimage;
 @property (strong, nonatomic) PFFileObject *image;
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock _Nullable)completion;

@@ -37,4 +37,34 @@
     [self.photoImageView loadInBackground];
 }
 
+- (IBAction)didTapLike:(id)sender {
+    if (self.post.liked) {
+        // Put code to unfavorite this tweet here
+        self.post.liked = NO;
+        
+        self.post.likeCount = @([self.post.likeCount floatValue] - 1);
+        // handle backend
+    } else {
+        self.post.liked = YES;
+        self.post.likeCount = @([self.post.likeCount floatValue] + 1);
+        //self.tweet.favoriteCount += 1;
+        // handle backend
+
+    }
+    
+    // Update cell UI
+    [self refreshData];
+}
+
+-(void)refreshData {
+    self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
+    
+    if (self.post.liked) {
+        [self.likeButton setImage:[UIImage imageNamed:@"instagram-red-heart-icon"] forState:UIControlStateNormal];
+    } else {
+        [self.likeButton setImage:[UIImage imageNamed:@"instagram-heart-icon"] forState:UIControlStateNormal];
+    }
+
+}
+
 @end
